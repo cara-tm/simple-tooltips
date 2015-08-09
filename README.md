@@ -1,8 +1,8 @@
 # simple-tooltips
 
-Simple and very light javascript tooltips with no dependencies, use data-set with full fallback for old browsers.
+Simple and very light javascript tooltips with no dependencies, uses the "data-set" attribute with full fallback for old browsers.
 
-An adaptation of Chris Bracco codepen (http://codepen.io/cbracco/pen/nufHz) with full fallback for old browsers.
+An adaptation of the Chris Bracco's CSS codepen (http://codepen.io/cbracco/pen/nufHz) with full fallback for old browsers.
 
 ## Usage
 
