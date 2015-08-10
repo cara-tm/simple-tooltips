@@ -2,7 +2,7 @@
 
 Simple and very light javascript tooltips with no dependencies, uses the "data-set" attribute with full fallback for old browsers.
 
-An adaptation of the Chris Bracco's CSS codepen (http://codepen.io/cbracco/pen/nufHz) with full fallback for old browsers.
+An adaptation of the Chris Bracco's CSS codepen (http://codepen.io/cbracco/pen/nufHz) with retroactive enhancements.
 
 ## Usage
 
