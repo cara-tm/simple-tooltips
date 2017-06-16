@@ -6,8 +6,10 @@
 
   // Verify if querySelectorAll is supported by the browser
   if (document.querySelectorAll) {
-  
-  // The variable t is an array of all HTML elements with a 'data-tooltip' attribute
+    // Add a new class attribute within the html tag when this script is ready
+    document.querySelector('html').classList.add('tooltips');
+    
+    // The variable t is an array of all HTML elements with a 'data-tooltip' attribute
     var t = document.querySelectorAll('[data-tooltip]');
     
     // Loop for all elements found
