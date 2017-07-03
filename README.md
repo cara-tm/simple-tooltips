@@ -8,7 +8,7 @@ An adaptation of the Chris Bracco's CSS codepen (http://codepen.io/cbracco/pen/n
 
 Simply add a **blank** `data-tooltip=""` attribute where to add a stylish tooltip. The script transferts the content of the `title` attributes into `aria-label` ones and do not affect old browsers which keep showing the default tooltip mode.
 
-## Fallback
+## Fallback (included into the tooltips.min.css file)
 
 A good practice consists to start your custom styles with these rules to avoid displaying unpopulated shapes (as alternatives to the default browser tooltips) for old browsers:
 
