@@ -2,7 +2,7 @@
 
 Simple and very light javascript tooltips with no dependencies, uses the "aria-label" attribute with full fallback for old browsers.
 
-An adaptation of the Chris Bracco's CSS codepen (http://codepen.io/cbracco/pen/nufHz) with retroactive enhancements.
+An adaptation of the Ben Mildren's CSS codepen (https://codepen.io/mildrenben/pen/rVBrpK) with retroactive enhancements and gracefull degradation.
 
 ## Usage
 
