@@ -4,15 +4,15 @@
 
   'use strict';
 
-  // Verify if querySelectorAll is supported by the browser
+  // Verifies if querySelectorAll is supported by the browser
   if (document.querySelectorAll) {
     // Add a new class attribute within the html tag when this script is ready
     document.querySelector('html').classList.add('tooltips');
     
-    // The variable t is an array of all HTML elements with a 'data-tooltip' attribute
+    // The variable 't' is an array of all HTML elements with a 'data-tooltip' attribute
     var t = document.querySelectorAll('[data-tooltip]');
     
-    // Loop for all elements found
+    // Loop into all elements found
   	for (var i = 0; i < t.length; i++) {
     
       // Stores the 'title' attribute content 
@@ -21,8 +21,11 @@
       // Transferts the 'title' content into a new 'aria-label' attribute attached to the current HTML element
     	t[i].setAttribute('aria-label', o);
       
-      // Remove the 'title' attribute into the HTML element
+      // Removes the 'title' attribute into corresponding elements
     	t[i].removeAttribute('title');
+      // Removes the 'data-tooltip' attribute into corresponding elements
+      t[i].removeAttribute('data-tooltip');
+
     };
   };
  
