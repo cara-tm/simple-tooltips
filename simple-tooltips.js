@@ -10,7 +10,7 @@
         document.querySelector('html').classList.add('tooltips');
 
         // The variable 't' is an array of all HTML elements with a 'data-tooltip' attribute
-        var t = document.querySelectorAll('[data-tooltip]');
+        var t = document.querySelectorAll('.tooltip');
 
         // Loop into all elements found
         for (var i = 0; i < t.length; i++) {
@@ -26,8 +26,6 @@
                 t[i].removeAttribute('title');
             }
 
-            // Removes the 'data-tooltip' attribute into corresponding elements
-            t[i].removeAttribute('data-tooltip');
         };
     };
 
