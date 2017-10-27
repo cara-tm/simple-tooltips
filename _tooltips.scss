@@ -1,0 +1,99 @@
+$cubic: cubic-bezier(.64,.09,.08,1);
+
+.tooltips [class^="tooltip"] {
+  position: relative;
+	&:after{
+	&:before {
+	  transform:translate3d(0,0,0);
+		-webkit-backface-visibility:hidden;
+		backface-visibility:hidden;
+		will-change:transform
+	}
+  }
+  &:after {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+	z-index: 1000;
+    content: attr(aria-label);
+    padding: 6px 10px;
+    top: 100%;
+    left: 50%;
+	width: 90.5%;
+	padding: 4px 8px;
+    transform: translateX(-50%) translateY(-2px);
+    background: #2a2a2a;
+	background:rgba(42, 42, 42, 0.8);
+	white-space: initial;
+	text-transform: none;
+	text-decoration: none;
+    color: #fff;
+    font: normal normal normal 12px/1.4 'Helvetica Neue Light','Helvetica Neue',Helvetica,Arial,sans-serif;
+	text-shadow:none;
+	transform: translateX(-50%) translateY(-2px);
+    transition: opacity 0.2s $cubic, transform 0.2s $cubic;
+  }
+  &:hover {
+    &:after {
+      display: block;
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+  }
+}
+
+.tooltips .tooltip--left {
+  &:after {
+    top: -4px;
+    left: 0;
+    transform: translateX(-112%) translateY(0);
+  }
+  &:hover {
+    &:after {
+      transform: translateX(-110%) translateY(0);
+    }
+  }
+}
+
+.tooltips .tooltip--right {
+  &:after {
+    top: -4px;
+    left: 100%;
+    transform: translateX(12%) translateY(0);
+  }
+  &:hover {
+    &:after {
+      transform: translateX(10%) translateY(0);
+    }
+  }
+}
+
+.tooltips .tooltip--triangle {
+  &:before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: solid 5px transparent;
+    border-right: solid 5px transparent;
+    border-bottom: solid 5px #2a2a2a;
+	border-bottom: solid 5px rgba(42, 42, 42, 0.8);
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    transform: translateX(-50%) translateY(-2px);
+    bottom: -0.5px;
+    left: 50%;
+	  line-height: 0;
+    transition: opacity 0.2s $cubic, transform 0.2s $cubic;
+    z-index: 1000;
+  }
+  &:hover {
+    &:before {
+      display: block;
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+  }
+}
