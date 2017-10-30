@@ -10,9 +10,9 @@ Simply add a **tooltip** `class` to your links. The script transferts the conten
 
 ## Limitations and browser bugs noticed
 
-* Edge browser (and old WebKit engines) underlines the tooltips content for links with a "text-decoration" rule (without any solution): https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/13140617/
+* Edge browser (and old WebKit engines) underlines the tooltips content for links with a "text-decoration" rule (without possible corrections): https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/13140617/
 * Edge browser shrinks tooltips with links surrounding long sentences. Solution: reduice the links length.
-* For links with a `table-cell` or `tables-row` display, the tooltips are shown full width (according to their parents). Solution: change the tooltip's `display` and `width` properties (ex. `.parent .link [class^=tooltip]:after {display: table;min-width: auto}`).
+* For links with a `table-cell` or `table-row` display, the tooltips are shown full width (according to their parents). Solution: change the tooltip's `display` and `width` properties (ex. `.parent .link [class^=tooltip]:after {display: table;min-width: auto}`).
 
 ## Demos
 
