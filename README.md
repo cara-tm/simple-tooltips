@@ -6,27 +6,12 @@ An adaptation of the Ben Mildren's CSS codepen (https://codepen.io/mildrenben/pe
 
 ## Usage
 
-Simply add a **blank** `data-tooltip=""` attribute where to add a stylish tooltip. The script transferts the content of the `title` attributes into `aria-label` ones and do not affect old browsers which keep showing the default tooltip mode.
+Simply add a **tooltip** `class` to your links. The script transferts the content of the `title` attributes into `aria-label` ones and do not affect old browsers which keep showing the default tooltip mode.
 
-## Fallback (included into the tooltips.min.css file)
+## Limitations and browser bugs noticed
 
-A good practice consists to start your custom styles with these rules to avoid displaying unpopulated shapes (as alternatives to the default browser tooltips) for old browsers:
-
-    [data-tooltip]:before,
-    [data-tooltip]:after,
-    .tooltip:before,
-    .tooltip:after {
-          display: none
-    }
-
-A new class named `tooltips` is injected within the `<html>` tag element when the script is ready and available through the DOM. As a consequence, you get a fallback for your custom styles:
-
-    .tooltips [data-tooltip]:before,
-    .tooltips .tooltip:before,
-    .tooltips [data-tooltip]:after,
-    .tooltips .tooltip:after {
-          display: block
-    }
+* Edge browser underlines the tooltips content for links with a "text-decoration" rule (without any solution): https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/13140617/
+* Edge browser shrinks tooltips with links surrounding long sentences. Solution: reduice the links length.
 
 ## Demos
 
