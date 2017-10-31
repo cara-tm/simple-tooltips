@@ -7,36 +7,38 @@ $transition: ease-in-out;
   position: relative;
 	&:after{
 	&:before {
-	  transform:translate3d(0,0,0);
-		-webkit-backface-visibility:hidden;
-		backface-visibility:hidden;
-		will-change:transform;
+	  transform: translate3d(0, 0, 0);
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
+		will-change: transform;
 	}
   }
   &:after {
+    content: attr(aria-label);
     opacity: 0;
     visibility: hidden;
     position: absolute;
-	z-index: 1000;
-    content: attr(aria-label);
+    z-index: 1000;
+	display: inline-block;
+    flex: none;
     padding: 4px 8px 5px;
     top: 100%;
     left: 50%;
-	width: 90.5%;
-	width: auto;
-	padding: 4px 8px 5px;
+    width: 90.5%;
+    width: auto;
+    padding: 4px 8px 5px;
     transform: translateX(-50%) translateY(-2px);
     background: #2a2a2a;
-	background:rgba(42, 42, 42, 0.8);
-	white-space: normal;
-	text-transform: none;
-	text-decoration: none;
+    background: rgba(42, 42, 42, 0.8);
+    white-space: normal;
+    text-transform: none;
+    text-decoration: none;
     color: #fff;
     font: normal normal normal 12px/1.4 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	border-radius: 2px;
-	text-shadow: none;
+    border-radius: 2px;
+    text-shadow: none;
 	transform: translateX(-50%) translateY(-2px);
-	-ms-transition: opacity $duration $transition $delay;
+    -ms-transition: opacity $duration $transition $delay;
     transition: opacity $duration $cubic $delay, transform $duration $cubic $delay;
   }
   &:hover {
@@ -78,19 +80,19 @@ $transition: ease-in-out;
 .tooltips .tooltip--triangle {
   &:before {
     content: '';
-	opacity: 0;
+    opacity: 0;
     visibility: hidden;
     position: absolute;
-	z-index: 1000;
-	bottom: -0.5px;
+    z-index: 1000;
+    bottom: -0.5px;
     left: 50%;
     width: 0;
     height: 0;
-	line-height: 0;
+    line-height: 0;
     border-left: solid 5px transparent;
     border-right: solid 5px transparent;
     border-bottom: solid 5px #2a2a2a;
-	border-bottom: solid 5px rgba(42, 42, 42, 0.9);
+    border-bottom: solid 5px rgba(42, 42, 42, 0.9);
     transform: translateX(-50%) translateY(-2px);
     transition: opacity 0.2s $cubic, transform 0.2s $cubic;
     
