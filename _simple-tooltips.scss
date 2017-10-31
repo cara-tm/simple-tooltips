@@ -1,4 +1,7 @@
-$cubic: cubic-bezier(.64,.09,.08,1);
+$cubic: cubic-bezier(.64, .09, .08, 1);
+$duration: 0.3s;
+$delay: 0s;
+$transition: ease-in-out;
 
 .tooltips [class^="tooltip"] {
   position: relative;
@@ -7,7 +10,7 @@ $cubic: cubic-bezier(.64,.09,.08,1);
 	  transform:translate3d(0,0,0);
 		-webkit-backface-visibility:hidden;
 		backface-visibility:hidden;
-		will-change:transform
+		will-change:transform;
 	}
   }
   &:after {
@@ -16,11 +19,12 @@ $cubic: cubic-bezier(.64,.09,.08,1);
     position: absolute;
 	z-index: 1000;
     content: attr(aria-label);
-    padding: 6px 10px;
+    padding: 4px 8px 5px;
     top: 100%;
     left: 50%;
 	width: 90.5%;
-	padding: 4px 8px;
+	width: auto;
+	padding: 4px 8px 5px;
     transform: translateX(-50%) translateY(-2px);
     background: #2a2a2a;
 	background:rgba(42, 42, 42, 0.8);
@@ -28,10 +32,12 @@ $cubic: cubic-bezier(.64,.09,.08,1);
 	text-transform: none;
 	text-decoration: none;
     color: #fff;
-    font: normal normal normal 12px/1.4 'Helvetica Neue Light','Helvetica Neue',Helvetica,Arial,sans-serif;
-	text-shadow:none;
+    font: normal normal normal 12px/1.4 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	border-radius: 2px;
+	text-shadow: none;
 	transform: translateX(-50%) translateY(-2px);
-    transition: opacity 0.2s $cubic, transform 0.2s $cubic;
+	-ms-transition: opacity $duration $transition $delay;
+    transition: opacity $duration $cubic $delay, transform $duration $cubic $delay;
   }
   &:hover {
     &:after {
@@ -72,21 +78,22 @@ $cubic: cubic-bezier(.64,.09,.08,1);
 .tooltips .tooltip--triangle {
   &:before {
     content: '';
+	opacity: 0;
+    visibility: hidden;
+    position: absolute;
+	z-index: 1000;
+	bottom: -0.5px;
+    left: 50%;
     width: 0;
     height: 0;
+	line-height: 0;
     border-left: solid 5px transparent;
     border-right: solid 5px transparent;
     border-bottom: solid 5px #2a2a2a;
-	border-bottom: solid 5px rgba(42, 42, 42, 0.8);
-    opacity: 0;
-    visibility: hidden;
-    position: absolute;
+	border-bottom: solid 5px rgba(42, 42, 42, 0.9);
     transform: translateX(-50%) translateY(-2px);
-    bottom: -0.5px;
-    left: 50%;
-	  line-height: 0;
     transition: opacity 0.2s $cubic, transform 0.2s $cubic;
-    z-index: 1000;
+    
   }
   &:hover {
     &:before {
