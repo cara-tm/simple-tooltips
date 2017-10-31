@@ -19,7 +19,7 @@ $transition: ease-in-out;
     visibility: hidden;
     position: absolute;
     z-index: 1000;
-	display: inline-block;
+    display: inline-block;
     flex: none;
     padding: 4px 8px 5px;
     top: 100%;
@@ -37,7 +37,7 @@ $transition: ease-in-out;
     font: normal normal normal 12px/1.4 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     border-radius: 2px;
     text-shadow: none;
-	transform: translateX(-50%) translateY(-2px);
+    transform: translateX(-50%) translateY(-2px);
     -ms-transition: opacity $duration $transition $delay;
     transition: opacity $duration $cubic $delay, transform $duration $cubic $delay;
   }
