@@ -21,6 +21,9 @@
 
                 // Transferts the 'title' content into a new 'aria-label' attribute attached to the current HTML element
                 t[i].setAttribute('aria-label', o);
+                // Adds some attributes for accessibility
+                t[i].setAttribute('aria-haspopup', 'true');
+                t[i].setAttribute('role', 'link');
 
                 // Removes the 'title' attribute into corresponding elements
                 t[i].removeAttribute('title');
