@@ -1,6 +1,5 @@
 /*! Simple transfert for title contents into data-tooltip attributes by cara-tm.com, MIT license. */
-
-(function(window) {
+;(function(window) {
 
     'use strict';
 
@@ -18,18 +17,19 @@
             if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) || document.body.clientWidth >= 680) {
                 // Stores the 'title' attribute content 
                 var o = t[i].getAttribute('title');
+				if (o != null) {
+					// Transferts the 'title' content into a new 'aria-label' attribute attached to the current HTML element
+					t[i].setAttribute('aria-label', o);
+					// Adds some attributes for accessibility
+					t[i].setAttribute('aria-haspopup', 'true');
+					t[i].setAttribute('role', 'link');
 
-                // Transferts the 'title' content into a new 'aria-label' attribute attached to the current HTML element
-                t[i].setAttribute('aria-label', o);
-                // Adds some attributes for accessibility
-                t[i].setAttribute('aria-haspopup', 'true');
-                t[i].setAttribute('role', 'link');
+					// Removes the 'title' attribute into corresponding elements
+					t[i].removeAttribute('title');
+				}
+				
+			}
+		}
 
-                // Removes the 'title' attribute into corresponding elements
-                t[i].removeAttribute('title');
-            }
-
-        };
-    };
-
+	};
 })();
