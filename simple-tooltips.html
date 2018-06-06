@@ -2,12 +2,17 @@
 <html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
 <title>Simple Tooltips Demo</title>
 
 <style>
 html,
-    body {height: 100%}
+    body {
+		width:100%;
+		height: 100%;
+		margin:0;
+		padding:0
+}
 p {
 position: relative;
 top: 50%;
@@ -15,20 +20,34 @@ margin-top: -1.25em;
 text-align: center;
 line-height: 1.25em
 }
-.tooltip span {display: none}
 
-/*! By © Ben Mildren - https://codepen.io/mildrenben/pen/rVBrpK  & cara-tm.com */
-@media only screen and (min-width:520px){.tooltips .tooltop[aria-label],.tooltips .tooltip{position:relative;cursor:pointer;-webkit-font-smoothing:none}.tooltip [aria-label]:before,.tooltip [aria-label]:after,.tooltips .tooltip:before,.tooltips .tooltip:after{position:absolute;visibility:hidden;bottom:76%;left:50%;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=0);opacity:0;-webkit-transition:opacity 0.2s ease-in-out,visibility 0.2s ease-in-out,-webkit-transform .2s cubic-bezier(.71,1.7,.77,1.24);transition:opacity .2s ease-in-out,visibility .2s ease-in-out,transform .2s cubic-bezier(.71,1.7,.77,1.24);-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);pointer-events:none}.tooltip:hover{text-decoration:none}.tooltip [aria-label]:hover:before,.tooltip [aria-label]:hover:after,.tooltip [aria-label]:focus:before,.tooltip [aria-label]:focus:after,.tooltips .tooltip:hover:before,.tooltips .tooltip:hover:after,.tooltips .tooltip:focus:before,.tooltips .tooltip:focus:after{visibility:visible;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100);opacity:1}.tooltips .tooltip:before,.tooltip [aria-label]:before{z-index:1001;border:6px solid transparent;background:transparent;content:""}.tooltips .tooltip:after,.tooltip [aria-label]:after{z-index:1000;width:110px;padding:8px;background-color:#000;background-color:hsla(0,0%,20%,.9);text-align:center;color:#fff;content:attr(aria-label);font:normal 400 normal 11px/1.2 sans-serif}.tooltips .tooltip-large:after{text-transform:none;white-space:normal}.tooltip [aria-label]:before,.tooltips .tooltip:before,.tooltips .tooltip-top:before{margin-left:-6px;margin-bottom:-10.5px;border-top-color:#000;border-top-color:hsla(0,0%,20%,.9)}[aria-label]:after,.tooltip:after,.tooltip-top:after{margin-left:-60px}[aria-label]:hover:before,[aria-label]:hover:after,[aria-label]:focus:before,[aria-label]:focus:after,.tooltip:hover:before,.tooltip:hover:after,.tooltip:focus:before,.tooltip:focus:after,.tooltip-top:hover:before,.tooltip-top:hover:after,.tooltip-top:focus:before,.tooltip-top:focus:after{-webkit-transform:translateY(-12px);transform:translateY(-12px)}.tooltip-left:before,.tooltip-right:before{top:3px}.tooltip-left:after,.tooltip-right:after{margin-left:0;margin-bottom:-16px}.tooltip-bottom:before,.tooltip-bottom:after{top:130%;bottom:auto;left:50%}.tooltips .tooltip-bottom:before{margin-top:-10px;margin-bottom:0;border-top-color:transparent;border-bottom-color:#000;border-bottom-color:hsla(0,0%,20%,.9)}}
+/*! Note: these CSS rules version includes some effects not available into the simple-tooltip.min.css file */
+
+a.tooltip{position:relative}.tooltips a.tooltip:after,.tooltips a.tooltip:before{visibility:hidden;opacity:0;position:absolute;z-index:999;overflow:hidden;transition:transform 200ms ease,opacity 200ms;pointer-events:none}.tooltips a.tooltip:before{content:attr(aria-label);display:block;top:150%;width:inherit;padding:10px 15px;background:#000;color:#fff;text-decoration:underline;text-transform:none;letter-spacing:1px;word-break:keep-all;hyphens:none;font:normal 400 normal 12px/1.2 'HelveticaNeue','Helvetica Neue',Helvetica,Arial,sans-serif;border-radius:2px}.tooltips a.tooltip:after{content:'';width:0;height:0;border:6px solid transparent}.tooltips a.tooltip:hover:after,.tooltips a.tooltip:hover:before{visibility:visible;opacity:0.85;text-decoration:none;transform:translateY(0);transition:transform 0.4s ease-in-out,opacity 0.4s ease-in-out}.tooltips a.tooltip--top:before{top:auto;left:0%;bottom:99%;margin-bottom:10px;transform:translateY(20px)}.tooltips a.tooltip--top:after{bottom:100.1%;left:8px;margin-bottom:4px;border-top-color:#000;border-bottom:none;transform:translateY(20px)}:dir(rtl) a.tooltip--top::before{right:0;left:auto}:dir(rtl) a.tooltip--top::after{left: auto;right:0;margin-right:8px}.tooltips a.tooltip--right:before{top:-50%;left:99%;margin-left:10px;transform:translateX(-20px)}.tooltips a.tooltip--right:after{top:50%;left:100%;margin-left:4px;margin-top:-6px;border-right-color:#000;border-left:none;transform:translateX(-20px)}.tooltips a.tooltip--bottom:before{top:99%;left:0%;margin-top:10px;transform:translateY(-20px)}.tooltips a.tooltip--bottom:after{top:100%;left:8px;margin-top:4px;border-bottom-color:#000;border-top:none;transform:translateY(-20px)}.tooltips a.tooltip--left:before{top:-50%;right:99%;margin-right:10px;transform:translateX(20px)}.tooltips a.tooltip--left:after{top:50%;right:100%;margin-top:-6px;margin-right:4px;border-left-color:#000;border-right:none;transform:translateX(20px)}:dir(rtl) a.tooltip--top::before{right:0;left:auto}:dir(rtl) a.tooltip--top::after{left: auto;right:0;margin-right:8px}:dir(rtl) a.tooltip--bottom:before{right:100%;left:auto}:dir(rtl) a.tooltip--bottom:after{right:0;left:auto;margin-right:8px}:dir(rtl) a.tooltip--bottom:before{right:100%;left:auto}:dir(rtl) a.tooltip--bottom:after{right:0;left:auto;margin-right:8px}
+
+/*!
+	Note: with some old Safari browser versions, the text included into the tooltips appears underlined (Webkit engine bug). If you want to correct this behavior, add this line below:
+	.tooltips .tooltip:hover{text-decoration:none}
+*/
+
+@media only screen and (max-width: 680px) {
+
+	/*! 
+		Note: this script overwrites tooltip's rules for better rendering within small screens
+		and avoids such ugly effects seen with many other solutions available on the Internet.
+	*/
+	
+}
 
 </style>
 </head>
 <body>
 
-<p><a role="link" href="#nogo" title="Hi! I am a tooltip 😎" class="tooltip tooltip--right">Here is a Link <span tabindex="0" role="tooltip" aria-hidden="true">Alternative tooltip content</span></a></p>
+	<p><a href="#nogo" title="Hi! I am a tooltip 😎" class="tooltip tooltip--bottom">Here is a link</a></p>
 
 <script>
-/*! Simple transfert for title contents into data-tooltip attributes by cara-tm.com, MIT license. */
-;(function(a){'use strict';if(document.querySelectorAll){document.querySelector('html').classList.add('tooltips');for(var a=document.querySelectorAll('.tooltip'),b=0;b<a.length;b++)if(Math.max(document.documentElement.clientWidth,a.innerWidth||0)||680<=document.body.clientWidth){var c=a[b].getAttribute('title');c!=null?(a[b].setAttribute('aria-label',c),a[b].setAttribute('aria-haspopup','true'),a[b].setAttribute('role','link'),a[b].removeAttribute('title')):''}}})();
+/*! Simple tooltips by cara-tm.com, MIT license. */
+;(function(a){'use strict';if(document.querySelectorAll & Math.max(document.documentElement.clientWidth,document.body.innerWidth||0)||680<=document.body.clientWidth){document.querySelector('html').classList.add('tooltips');for(var a=document.querySelectorAll('.tooltip'),b=0;b<a.length;b++){var c=a[b].getAttribute('title');c!=null?(a[b].setAttribute('aria-label',c),a[b].setAttribute('aria-haspopup','true'),a[b].setAttribute('role','link'),a[b].removeAttribute('title')):''}}})();
 </script>
 
 </body></html>
